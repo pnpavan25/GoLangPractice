@@ -52,7 +52,7 @@ func (ms MapStore) GetById(cid string) (domain.Customer, error) {
 
 // MapStore creates domain.Customer
 func (ms MapStore) GetAll() ([]domain.Customer, error) {
-	allCustomers := make([]domain.Customer, len(ms.store))
+	allCustomers := make([]domain.Customer, 0, len(ms.store))
 	for _, customer := range ms.store {
 		allCustomers = append(allCustomers, customer)
 	}
